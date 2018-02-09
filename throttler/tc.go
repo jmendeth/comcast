@@ -274,7 +274,7 @@ func (t *tcThrottler) exists() bool {
 	if dry {
 		return false
 	}
-	err := t.c.execute(tcExists)
+	err := t.c.execute(fmt.Sprintf(tcExists, cfg.Device))
 	return err == nil
 }
 
